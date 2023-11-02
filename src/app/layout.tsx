@@ -5,6 +5,7 @@ import Fathom from '@/components/fathom'
 import { ThemeProvider } from '@/components/theme-provider'
 import { TopNav } from '@/components/top-nav'
 import { WebgpuChecker } from '@/components/webgpu-checker'
+import { SidebarChat } from '@/components/sidebar-chat'
 
 import type { Metadata } from 'next'
 import NextAuthProvider from './context/NextAuthProvider'
@@ -25,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <WebgpuChecker />
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <TopNav />
-            {children}
+            <main className="flex flex-1 overflow-auto mt-16">{children}</main>
           </ThemeProvider>
           <Fathom />
         </NextAuthProvider>
